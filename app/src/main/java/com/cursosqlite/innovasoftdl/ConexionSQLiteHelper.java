@@ -10,9 +10,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
-    final String CREAR_TABLA_USUARIO = "CREATE TABLE usaurio (id INTEGER, nombre TEXT, telefono TEXT)";
+    final String CREAR_TABLA_USUARIO = "CREATE TABLE usuario (id INTEGER, nombre TEXT, telefono TEXT)";
 
-    public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) { //se instanciara a Mainactivity estos valores
         super(context, name, factory, version);
     }
 
