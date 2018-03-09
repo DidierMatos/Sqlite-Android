@@ -10,18 +10,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
+    final String CREAR_TABLA_USUARIO = "CREATE TABLE usaurio (id INTEGER, nombre TEXT, telefono TEXT)";
 
     public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+    public void onCreate(SQLiteDatabase db) { //este metodo genera las tablas o scripts correspondientes de la entidad
+        db.execSQL(CREAR_TABLA_USUARIO); //ejecutar sentencias de creación
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int versionAntigua, int versionNueva) { //verifica si existe una version antigua de la BD (se modifico dos variables)
+        db.execSQL("DROP TABLE IF EXISTS usuarios"); //si se instala la app y encuentra una version antigua la eliminara
+        onCreate(db); //vuelve a crear
     }
 }
