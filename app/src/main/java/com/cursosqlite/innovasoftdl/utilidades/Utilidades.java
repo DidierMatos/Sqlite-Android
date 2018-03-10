@@ -6,7 +6,7 @@ package com.cursosqlite.innovasoftdl.utilidades;
 
 public class Utilidades { //recomendable crear una clase con constantes representando campos y tablas de la BD
 
-    //Constantes campos tabla usuario
+    //Constantes campos tabla usuario para trabajar en otras clases
 
     public static final String TABLA_USUARIO = "usuario";
     public static final String CAMPO_ID = "id";

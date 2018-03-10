@@ -26,13 +26,27 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     }
 
     public void onClick (View view){
-        registrarUsuarios();
-        //registrarUsuariosSql();
+        //registrarUsuarios();
+        registrarUsuariosSql();
     }
 
     private void registrarUsuariosSql() {
 
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
 
+        SQLiteDatabase db=conn.getWritableDatabase();
+
+        //insert into usuario (id,nombre,telefono) values (123,'Cristian','85665223')
+
+        String insert="INSERT INTO "+Utilidades.TABLA_USUARIO
+                +" ( " +Utilidades.CAMPO_ID+","+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_TELEFONO+")" +
+                " VALUES ("+campoId.getText().toString()+", '"+campoNombre.getText().toString()+"','"
+                +campoTelefono.getText().toString()+"')";
+
+        db.execSQL(insert);
+
+
+        db.close();
 
 
     }
