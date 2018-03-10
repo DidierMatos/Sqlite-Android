@@ -4,13 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.cursosqlite.innovasoftdl.utilidades.Utilidades;
+
 /**
  * Created by didie on 09/03/2018.
  */
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
-
-    final String CREAR_TABLA_USUARIO = "CREATE TABLE usuario (id INTEGER, nombre TEXT, telefono TEXT)";
 
     public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) { //se instanciara a Mainactivity estos valores
         super(context, name, factory, version);
@@ -18,7 +18,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) { //este metodo genera las tablas o scripts correspondientes de la entidad
-        db.execSQL(CREAR_TABLA_USUARIO); //ejecutar sentencias de creación
+        db.execSQL(Utilidades.CREAR_TABLA_USUARIO); //ejecutar sentencias de creación
     }
 
     @Override
