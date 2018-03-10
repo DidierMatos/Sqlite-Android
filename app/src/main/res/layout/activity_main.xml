@@ -8,10 +8,11 @@
     tools:context="com.cursosqlite.innovasoftdl.MainActivity">
 
     <Button
+        android:id="@+id/btnMenuRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Usuario"
-        />
+        android:onClick="onClick"
+        android:text="Registrar Usuario" />
 
     <Button
         android:layout_width="match_parent"

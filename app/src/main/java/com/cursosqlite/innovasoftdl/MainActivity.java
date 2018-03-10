@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view){
         Intent miintent=null;
         switch (view.getId()) {
-            case R.id.btnRegistro:
+            case R.id.btnMenuRegistro:
                 miintent = new Intent(MainActivity.this, RegistroUsuarioActivity.class);
                 break;
         }

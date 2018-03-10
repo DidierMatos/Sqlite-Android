@@ -23,7 +23,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAntigua, int versionNueva) { //verifica si existe una version antigua de la BD (se modifico dos variables)
-        db.execSQL("DROP TABLE IF EXISTS usuarios"); //si se instala la app y encuentra una version antigua la eliminara
+        db.execSQL("DROP TABLE IF EXISTS usuarios"+Utilidades.TABLA_USUARIO); //si se instala la app y encuentra una version antigua la eliminara
         onCreate(db); //vuelve a crear
     }
 }

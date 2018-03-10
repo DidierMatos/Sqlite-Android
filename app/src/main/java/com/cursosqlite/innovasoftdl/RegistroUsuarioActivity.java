@@ -27,13 +27,20 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
     public void onClick (View view){
         registrarUsuarios();
+        //registrarUsuariosSql();
+    }
+
+    private void registrarUsuariosSql() {
+
+
+
+
     }
 
     private void registrarUsuarios() {
 
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this,"bd_usuarios",null,1); //define cual es la BD
         SQLiteDatabase db = conn.getWritableDatabase(); //abre la base de datos para editar
-        //hasmap tienen un valor asociado y clave
 
         ContentValues values = new ContentValues(); //Se puede usar values o desde inser into y los valores con sqlite
         values.put(Utilidades.CAMPO_ID, campoId.getText().toString()); //agregar con el put una clave y valor asociado a los diferentes campos de nuestra tabla.
